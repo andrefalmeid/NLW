@@ -1,5 +1,5 @@
 //create map
-const map = L.map("mapid").setView([-18.4511146, -43.6586848], 15);
+const map = L.map("mapid").setView([-27.2109325,-49.6448719], 15);
 
 //create and add tileLayer
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
@@ -70,10 +70,10 @@ function deleteField(event){
 }
 
 //select sim e não
- function toggleSelect(){
+ function toggleSelect(event){
     
     //retira a class .active (dos botões)
-    document.querySelectorAll(".button-selectt button")
+    document.querySelectorAll(".button-select button")
     .forEach(button => button.classList.remove("active"))
     
     
@@ -85,4 +85,16 @@ function deleteField(event){
     const input = document.querySelector('[name="open_on_weekends"]')
     
     input.value = button.dataset.value
+ }
+
+ function validate(event){
+  //validade lat e lng estão preenchidos 
+    const needsLatAndLng = true;
+  if(needsLatAndLng){
+    event.preventDefault()
+  alert('Selecione um ponto no mapa')
+ 
+  }
+  event.preventDefault()
+  alert('Selecione um ponyo no mapa')
  }

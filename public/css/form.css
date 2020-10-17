@@ -103,5 +103,5 @@ fieldset legend{
     display: flex;
     border-radius: 10px;
     padding: .6rem;
-    cursos:pointer;
+    cursor:pointer;
     }
